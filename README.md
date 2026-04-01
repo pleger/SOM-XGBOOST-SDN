@@ -10,6 +10,10 @@ Detailed usage:
 
 - `README_SCX_V2.md`
 
+Results comparison with the paper (including summary table):
+
+- `docs/RESULTS_VS_PAPER.md`
+
 ## Quick start
 
 ```bash
@@ -30,4 +34,3 @@ Experiment outputs are written as JSON files under `results/`, including:
 - per-seed metrics
 - aggregated means/std
 - threshold values used after calibration
-
