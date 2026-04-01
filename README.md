@@ -2,6 +2,10 @@
 
 Reproducible experiments for a SOM-based continuous XGBoost pipeline for DDoS detection on CICIDS2017 Friday traffic.
 
+## Creator
+
+- [Paul Leger](https://github.com/pleger) (`@pleger`)
+
 Main script:
 
 - `scripts/scx_v2_experiment.py`
@@ -50,3 +54,7 @@ Experiment outputs are written as JSON files under `results/`, including:
 - per-seed metrics
 - aggregated means/std
 - threshold values used after calibration
+
+## Paper Reference
+
+Liu, S., Fukuda, H., and Leger, P., *SOM-based Continuous XGBoost Approach for DDoS Attack Detection and Mitigation in Edge SDN*.
