@@ -1,0 +1,219 @@
+{
+  "config": {
+    "data_dir": "datasets/cicids2017/friday",
+    "mode": "both",
+    "seeds": "42,43,44",
+    "seed_ratio": 0.1,
+    "stream_ratio": 0.65,
+    "test_ratio": 0.25,
+    "split_strategy": "random_stratified",
+    "threshold": 0.5,
+    "n_estimators": 250,
+    "max_depth": 6,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 3.0,
+    "reg_lambda": 2.0,
+    "n_jobs": 8,
+    "som_side": 25,
+    "som_iterations": 20000,
+    "som_sigma": 3.0,
+    "som_learning_rate": 0.5,
+    "som_max_train_samples": 50000,
+    "min_neuron_support": 30,
+    "attack_conf_threshold": 0.05,
+    "benign_conf_threshold": 0.3,
+    "buffer_cap": 250000,
+    "retrain_trigger": 25000,
+    "stream_batch_size": 25000,
+    "neg_pos_max_ratio": 2.0,
+    "max_rows": 0,
+    "output": "results/scx_v2_random_3seeds.json"
+  },
+  "dataset": {
+    "rows_total": 703245,
+    "rows_seed": 70324,
+    "rows_stream": 457109,
+    "rows_test": 175812,
+    "features_used": 77,
+    "raw_label_counts": {
+      "BENIGN": 414322,
+      "Bot": 1966,
+      "DDoS": 128027,
+      "PortScan": 158930
+    },
+    "binary_positive_ratio": 0.4108425939750727,
+    "feature_sample": [
+      "Flow Duration",
+      "Total Fwd Packets",
+      "Total Backward Packets",
+      "Total Length of Fwd Packets",
+      "Total Length of Bwd Packets",
+      "Fwd Packet Length Max",
+      "Fwd Packet Length Min",
+      "Fwd Packet Length Mean",
+      "Fwd Packet Length Std",
+      "Bwd Packet Length Max"
+    ]
+  },
+  "runs": [
+    {
+      "mode": "baseline",
+      "seed": 42,
+      "metrics": {
+        "accuracy": 0.9986690328305236,
+        "precision": 0.9987807074667812,
+        "recall": 0.9979787072032784,
+        "f1": 0.9983795462729564,
+        "tn": 103493.0,
+        "fp": 88.0,
+        "fn": 146.0,
+        "tp": 72085.0,
+        "roc_auc": 0.9999738719204285,
+        "elapsed_sec": 1.223804235458374
+      }
+    },
+    {
+      "mode": "scx_v2",
+      "seed": 42,
+      "metrics": {
+        "accuracy": 0.9985040839078106,
+        "precision": 0.9992784992784993,
+        "recall": 0.997078816574601,
+        "f1": 0.9981774460683424,
+        "tn": 103529.0,
+        "fp": 52.0,
+        "fn": 211.0,
+        "tp": 72020.0,
+        "roc_auc": 0.9999690606188367,
+        "elapsed_sec": 28.517239093780518,
+        "accepted_pseudo_labels": 356140.0,
+        "retrain_rounds": 9.0,
+        "acceptance_rate_stream": 0.7791139531271535
+      }
+    },
+    {
+      "mode": "baseline",
+      "seed": 43,
+      "metrics": {
+        "accuracy": 0.9986747207244102,
+        "precision": 0.9987945463614698,
+        "recall": 0.9979787072032784,
+        "f1": 0.9983864601150946,
+        "tn": 103494.0,
+        "fp": 87.0,
+        "fn": 146.0,
+        "tp": 72085.0,
+        "roc_auc": 0.9999755685802169,
+        "elapsed_sec": 1.302286148071289
+      }
+    },
+    {
+      "mode": "scx_v2",
+      "seed": 43,
+      "metrics": {
+        "accuracy": 0.9986349054672036,
+        "precision": 0.9993202846481433,
+        "recall": 0.9973557059988094,
+        "f1": 0.9983370288248337,
+        "tn": 103532.0,
+        "fp": 49.0,
+        "fn": 191.0,
+        "tp": 72040.0,
+        "roc_auc": 0.9999681012188083,
+        "elapsed_sec": 28.944376230239868,
+        "accepted_pseudo_labels": 356147.0,
+        "retrain_rounds": 9.0,
+        "acceptance_rate_stream": 0.7791292667613195
+      }
+    },
+    {
+      "mode": "baseline",
+      "seed": 44,
+      "metrics": {
+        "accuracy": 0.9986747207244102,
+        "precision": 0.9987945463614698,
+        "recall": 0.9979787072032784,
+        "f1": 0.9983864601150946,
+        "tn": 103494.0,
+        "fp": 87.0,
+        "fn": 146.0,
+        "tp": 72085.0,
+        "roc_auc": 0.9999738004800112,
+        "elapsed_sec": 1.104712963104248
+      }
+    },
+    {
+      "mode": "scx_v2",
+      "seed": 44,
+      "metrics": {
+        "accuracy": 0.9987145359816167,
+        "precision": 0.999237329265756,
+        "recall": 0.9976325954230179,
+        "f1": 0.9984343175425713,
+        "tn": 103526.0,
+        "fp": 55.0,
+        "fn": 171.0,
+        "tp": 72060.0,
+        "roc_auc": 0.99996917262458,
+        "elapsed_sec": 26.097097158432007,
+        "accepted_pseudo_labels": 353868.0,
+        "retrain_rounds": 9.0,
+        "acceptance_rate_stream": 0.7741435850092647
+      }
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "accuracy_mean": 0.9986728247597814,
+      "accuracy_std": 2.681298891952777e-06,
+      "precision_mean": 0.9987899333965736,
+      "precision_std": 6.523717518978128e-06,
+      "recall_mean": 0.9979787072032784,
+      "recall_std": 0.0,
+      "f1_mean": 0.9983841555010485,
+      "f1_std": 3.2592164399520346e-06,
+      "tn_mean": 103493.66666666667,
+      "tn_std": 0.4714045207910317,
+      "fp_mean": 87.33333333333333,
+      "fp_std": 0.4714045207910317,
+      "fn_mean": 146.0,
+      "fn_std": 0.0,
+      "tp_mean": 72085.0,
+      "tp_std": 0.0,
+      "roc_auc_mean": 0.9999744136602189,
+      "roc_auc_std": 8.171723949715649e-07,
+      "elapsed_sec_mean": 1.2102677822113037,
+      "elapsed_sec_std": 0.08122486289877724
+    },
+    "scx_v2": {
+      "accuracy_mean": 0.9986178417855437,
+      "accuracy_std": 8.675980546376398e-05,
+      "precision_mean": 0.9992787043974661,
+      "precision_std": 3.386670362953131e-05,
+      "recall_mean": 0.9973557059988094,
+      "recall_std": 0.00022607926816124496,
+      "f1_mean": 0.9983162641452491,
+      "f1_std": 0.00010589024980869755,
+      "tn_mean": 103529.0,
+      "tn_std": 2.449489742783178,
+      "fp_mean": 52.0,
+      "fp_std": 2.449489742783178,
+      "fn_mean": 191.0,
+      "fn_std": 16.32993161855452,
+      "tp_mean": 72040.0,
+      "tp_std": 16.32993161855452,
+      "roc_auc_mean": 0.999968778154075,
+      "roc_auc_std": 4.808446305541741e-07,
+      "elapsed_sec_mean": 27.852904160817463,
+      "elapsed_sec_std": 1.2537291588311057,
+      "accepted_pseudo_labels_mean": 355385.0,
+      "accepted_pseudo_labels_std": 1072.684793714662,
+      "retrain_rounds_mean": 9.0,
+      "retrain_rounds_std": 0.0,
+      "acceptance_rate_stream_mean": 0.7774622682992459,
+      "acceptance_rate_stream_std": 0.0023466717866300417
+    }
+  }
+}

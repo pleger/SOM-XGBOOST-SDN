@@ -1,0 +1,111 @@
+{
+  "config": {
+    "data_dir": "datasets/cicids2017/friday",
+    "mode": "scx_v2",
+    "seeds": "42",
+    "seed_ratio": 0.1,
+    "stream_ratio": 0.65,
+    "test_ratio": 0.25,
+    "split_strategy": "per_file_time",
+    "threshold": 0.5,
+    "n_estimators": 250,
+    "max_depth": 6,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 3.0,
+    "reg_lambda": 2.0,
+    "n_jobs": 8,
+    "som_side": 25,
+    "som_iterations": 20000,
+    "som_sigma": 3.0,
+    "som_learning_rate": 0.5,
+    "som_max_train_samples": 50000,
+    "min_neuron_support": 30,
+    "attack_conf_threshold": 0.92,
+    "benign_conf_threshold": 0.97,
+    "buffer_cap": 250000,
+    "retrain_trigger": 25000,
+    "stream_batch_size": 25000,
+    "neg_pos_max_ratio": 2.0,
+    "max_rows": 50000,
+    "output": "results/smoke_scx.json"
+  },
+  "dataset": {
+    "rows_total": 50000,
+    "rows_seed": 5000,
+    "rows_stream": 32500,
+    "rows_test": 12500,
+    "features_used": 77,
+    "raw_label_counts": {
+      "BENIGN": 414322,
+      "Bot": 1966,
+      "DDoS": 128027,
+      "PortScan": 158930
+    },
+    "binary_positive_ratio": 4e-05,
+    "feature_sample": [
+      "Flow Duration",
+      "Total Fwd Packets",
+      "Total Backward Packets",
+      "Total Length of Fwd Packets",
+      "Total Length of Bwd Packets",
+      "Fwd Packet Length Max",
+      "Fwd Packet Length Min",
+      "Fwd Packet Length Mean",
+      "Fwd Packet Length Std",
+      "Bwd Packet Length Max"
+    ]
+  },
+  "runs": [
+    {
+      "mode": "scx_v2",
+      "seed": 42,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tn": 12500.0,
+        "fp": 0.0,
+        "fn": 0.0,
+        "tp": 0.0,
+        "roc_auc": NaN,
+        "elapsed_sec": 3.504166841506958,
+        "accepted_pseudo_labels": 0.0,
+        "retrain_rounds": 0.0,
+        "acceptance_rate_stream": 0.0
+      }
+    }
+  ],
+  "summary": {
+    "scx_v2": {
+      "accuracy_mean": 1.0,
+      "accuracy_std": 0.0,
+      "precision_mean": 0.0,
+      "precision_std": 0.0,
+      "recall_mean": 0.0,
+      "recall_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0,
+      "tn_mean": 12500.0,
+      "tn_std": 0.0,
+      "fp_mean": 0.0,
+      "fp_std": 0.0,
+      "fn_mean": 0.0,
+      "fn_std": 0.0,
+      "tp_mean": 0.0,
+      "tp_std": 0.0,
+      "roc_auc_mean": NaN,
+      "roc_auc_std": NaN,
+      "elapsed_sec_mean": 3.504166841506958,
+      "elapsed_sec_std": 0.0,
+      "accepted_pseudo_labels_mean": 0.0,
+      "accepted_pseudo_labels_std": 0.0,
+      "retrain_rounds_mean": 0.0,
+      "retrain_rounds_std": 0.0,
+      "acceptance_rate_stream_mean": 0.0,
+      "acceptance_rate_stream_std": 0.0
+    }
+  }
+}

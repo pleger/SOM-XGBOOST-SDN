@@ -1,0 +1,102 @@
+{
+  "config": {
+    "data_dir": "datasets/cicids2017/friday",
+    "mode": "baseline",
+    "seeds": "42",
+    "seed_ratio": 0.1,
+    "stream_ratio": 0.65,
+    "test_ratio": 0.25,
+    "split_strategy": "random_stratified",
+    "threshold": 0.5,
+    "n_estimators": 250,
+    "max_depth": 8,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 3.0,
+    "reg_lambda": 2.0,
+    "n_jobs": 8,
+    "som_side": 25,
+    "som_iterations": 20000,
+    "som_sigma": 3.0,
+    "som_learning_rate": 0.5,
+    "som_max_train_samples": 50000,
+    "min_neuron_support": 30,
+    "attack_conf_threshold": 0.92,
+    "benign_conf_threshold": 0.97,
+    "buffer_cap": 250000,
+    "retrain_trigger": 25000,
+    "stream_batch_size": 25000,
+    "neg_pos_max_ratio": 2.0,
+    "max_rows": 0,
+    "output": "results/tune_baseline_est250_d8.json"
+  },
+  "dataset": {
+    "rows_total": 703245,
+    "rows_seed": 70324,
+    "rows_stream": 457109,
+    "rows_test": 175812,
+    "features_used": 77,
+    "raw_label_counts": {
+      "BENIGN": 414322,
+      "Bot": 1966,
+      "DDoS": 128027,
+      "PortScan": 158930
+    },
+    "binary_positive_ratio": 0.4108425939750727,
+    "feature_sample": [
+      "Flow Duration",
+      "Total Fwd Packets",
+      "Total Backward Packets",
+      "Total Length of Fwd Packets",
+      "Total Length of Bwd Packets",
+      "Fwd Packet Length Max",
+      "Fwd Packet Length Min",
+      "Fwd Packet Length Mean",
+      "Fwd Packet Length Std",
+      "Bwd Packet Length Max"
+    ]
+  },
+  "runs": [
+    {
+      "mode": "baseline",
+      "seed": 42,
+      "metrics": {
+        "accuracy": 0.9986917844060701,
+        "precision": 0.998849889838846,
+        "recall": 0.997964862732068,
+        "f1": 0.9984071801548497,
+        "tn": 103498.0,
+        "fp": 83.0,
+        "fn": 147.0,
+        "tp": 72084.0,
+        "roc_auc": 0.9999753972969713,
+        "elapsed_sec": 1.1144349575042725
+      }
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "accuracy_mean": 0.9986917844060701,
+      "accuracy_std": 0.0,
+      "precision_mean": 0.998849889838846,
+      "precision_std": 0.0,
+      "recall_mean": 0.997964862732068,
+      "recall_std": 0.0,
+      "f1_mean": 0.9984071801548497,
+      "f1_std": 0.0,
+      "tn_mean": 103498.0,
+      "tn_std": 0.0,
+      "fp_mean": 83.0,
+      "fp_std": 0.0,
+      "fn_mean": 147.0,
+      "fn_std": 0.0,
+      "tp_mean": 72084.0,
+      "tp_std": 0.0,
+      "roc_auc_mean": 0.9999753972969713,
+      "roc_auc_std": 0.0,
+      "elapsed_sec_mean": 1.1144349575042725,
+      "elapsed_sec_std": 0.0
+    }
+  }
+}
